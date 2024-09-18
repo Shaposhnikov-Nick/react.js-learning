@@ -4,8 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla JS</title>
+    <style>
+      .app {
+        text-align: center;
+      }
+      .green-btn {
+        color: white;
+        background-color: green;
+      }
+    </style>
   </head>
   <body>
-    <button>Click me</button>
+    <div class="app">
+      <button id="btn-1" onclick="changeButton('btn-1')">Click me</button>
+    </div>
+    <script>
+      function changeButton(id) {
+        const btn = document.getElementById(id);
+        btn.innerHTML = "Clicked!";
+        btn.className = "green-btn";
+      }
+    </script>
   </body>
 </html>
