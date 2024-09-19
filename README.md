@@ -1,2 +1,2 @@
 # react.js-learning
-learning React.js
+courses and study projects to study React.js
