@@ -1,22 +1,9 @@
 import Square from "./Square";
-import {useState} from "react";
 
-export default function Board() {
-  // значения в квадратах
-  const [squares, setSquares] = useState(Array(9).fill(null));
-  let [xIsNext, setXIsNext] = useState(true);
-
-  const winner = calculateWinner(squares)
-  let status
-  if (winner) {
-    status = 'Winner: ' + winner;
-  } else {
-    status = 'Next player: ' + (xIsNext ? "X" : "O");
-  }
-
+export default function Board({xIsNext, squares, onPlay}) {
   function handleClick(i) {
-    // проверка, что в квадрате уже есть значение  или есть победитель
-    if (squares[i] || calculateWinner(squares)) {
+    // проверка, что в квадрате уже есть значение или есть победитель
+    if (calculateWinner(squares) || squares[i]) {
       return
     }
 
@@ -29,13 +16,19 @@ export default function Board() {
     } else {
       nextSquares[i] = "O"
     }
+    onPlay(nextSquares)
+  }
 
-    setSquares(nextSquares)
-    setXIsNext(!xIsNext)
+  const winner = calculateWinner(squares)
+  let status
+  if (winner) {
+    status = 'Winner: ' + winner;
+  } else {
+    status = 'Next player: ' + (xIsNext ? "X" : "O");
   }
 
   return (
-    <div className="board">
+    <div>
       <div className="status">{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)}/>
