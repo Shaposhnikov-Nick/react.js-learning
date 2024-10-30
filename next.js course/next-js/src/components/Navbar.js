@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "../styles/Navbar.module.scss";
 
 const navigation = [
@@ -9,12 +10,13 @@ const navigation = [
 ];
 
 const Navbar = () => {
-  const { pathname } = useRouter();
-  console.log(pathname);
+  const { pathname } = useRouter(); // хук, который возвращает текущий путь
 
   return (
     <nav className={styles.nav}>
-      <div className={styles.logo}>next.js</div>
+      <div className={styles.logo}>
+        <Image src='/logo.png' height={60} width={60} />
+      </div>
       <div className={styles.links}>
         {navigation.map(({ id, title, path }) => (
           <Link key={id} href={path}>
