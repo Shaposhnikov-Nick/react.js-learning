@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import Heading from "@/components/Heading";
 import { notFound } from "next/navigation";
 
@@ -39,13 +40,17 @@ const Contacts = ({ contacts }) => {
     <>
       <Heading text='Contacts list:' />
       <ul>
-        {contacts &&
-          contacts.map(({ id, name, email }) => (
-            <li key={id}>{` name: ${name}, email: ${email}`}</li>
-          ))}
+        {
+          contacts &&
+            contacts.map(({ id, name }) => (
+                <li key={id}>
+                  <Link href={`/contacts/${id}`}>{name}</Link>
+                </li>
+            ))
+        }
       </ul>
     </>
-  );
-};
+  )
+}
 
 export default Contacts;
