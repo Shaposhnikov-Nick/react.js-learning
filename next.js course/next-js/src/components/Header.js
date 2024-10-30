@@ -1,11 +1,9 @@
-import Heading from "@/components/Heading";
+import Navbar from "./Navbar";
 
-const Header = () => {
-  return (
-    <header>
-      <Heading text='Header' tag='h3' />
-    </header>
-  );
-};
+const Header = () => (
+  <header>
+    <Navbar />
+  </header>
+);
 
 export default Header;

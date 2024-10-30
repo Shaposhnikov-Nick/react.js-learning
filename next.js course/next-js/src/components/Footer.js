@@ -2,9 +2,9 @@ import Heading from "@/components/Heading";
 
 const Footer = () => {
   return (
-    <header>
+    <footer>
       <Heading text='Created by me' tag='h3' />
-    </header>
+    </footer>
   );
 };
 
