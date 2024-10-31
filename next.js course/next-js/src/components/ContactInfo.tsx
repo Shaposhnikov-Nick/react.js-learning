@@ -1,6 +1,12 @@
-import Heading from "@/components/Heading";
+import {FC} from "react"
+import Heading from "./Heading";
+import {contactType} from "../../types"
 
-const ContactInfo = ({contact}) => {
+type contactInfoProps = {
+    contact: contactType
+}
+
+const ContactInfo:FC<contactInfoProps> = ({contact}) => {
     if(!contact) {
         return <Heading tag="h3" text="Empty contact"/>
     }

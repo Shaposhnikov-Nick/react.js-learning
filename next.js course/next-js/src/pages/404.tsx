@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import Heading from "@/components/Heading";
+import Heading from "../components/Heading";
 
 const Error = () => {
   // автоматический редирект на главную страницу через 3 сек

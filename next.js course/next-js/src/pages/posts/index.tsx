@@ -1,7 +1,14 @@
-import Heading from "@/components/Heading";
+import {GetStaticProps} from "next"
+import {FC} from "react"
+import {postType} from "../../../types"
+import Heading from "../../components/Heading";
 import Link from "next/link";
 
-export const getStaticProps = async () => {
+type postsTypeProps = {
+    posts: [postType]
+}
+
+export const getStaticProps:GetStaticProps = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
     const data = await response.json();
 
@@ -16,7 +23,7 @@ export const getStaticProps = async () => {
     };
 };
 
-const Posts = ({posts}) => {
+const Posts:FC<postsTypeProps> = ({posts}) => {
     return (
         <>
             <Heading text='Post list:'/>

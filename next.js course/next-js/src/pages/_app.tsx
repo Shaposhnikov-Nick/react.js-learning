@@ -1,13 +1,14 @@
-import "@/styles/globals.scss";
-import Layout from "@/components/Layout";
+import {AppProps} from "next/app"
+import "../styles/globals.scss";
 import Image from "next/image";
+import Layout from "../components/Layout";
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <Layout>
-      {/* <main> */}
+       <main>
       <Component {...pageProps} />
-      {/* </main> */}
+       </main>
       <Image src='/logo.png' width={500} height={350} alt='preview' />
     </Layout>
   );

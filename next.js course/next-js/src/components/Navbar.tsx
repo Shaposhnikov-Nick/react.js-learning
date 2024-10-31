@@ -1,3 +1,4 @@
+import {FC} from "react"
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,7 +10,7 @@ const navigation = [
   { id: 3, title: "Contacts", path: "/contacts" },
 ];
 
-const Navbar = () => {
+const Navbar:FC = () => {
   const { pathname } = useRouter(); // хук, который возвращает текущий путь
 
   return (

@@ -1,6 +1,7 @@
-import Heading from "@/components/Heading";
+import {FC} from "react"
+import Heading from "./Heading";
 
-const Footer = () => {
+const Footer:FC = () => {
   return (
     <footer>
       <Heading text='Created by me' tag='h3' />

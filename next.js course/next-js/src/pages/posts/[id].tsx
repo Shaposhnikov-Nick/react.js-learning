@@ -1,7 +1,14 @@
-import PostInfo from "@/components/PostInfo";
+import {GetStaticPaths} from "next"
+import {FC} from "react"
+import {contactType, postType} from "../../../types"
+import PostInfo from "../../components/PostInfo";
+
+type postTypeProps = {
+    post: postType
+}
 
 // SSG - статичная генерация контента
-export const getStaticPaths = async () => {
+export const getStaticPaths:GetStaticPaths = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
     const data = await response.json();
 
@@ -32,7 +39,7 @@ export const getStaticProps = async (context) => {
     };
 };
 
-const Post = ({post}) => {
+const Post:FC<postTypeProps> = ({post}) => {
     return (
         <>
             <PostInfo post={post}/>
