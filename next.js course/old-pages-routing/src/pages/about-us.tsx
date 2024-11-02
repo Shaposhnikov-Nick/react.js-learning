@@ -1,8 +1,9 @@
 import {FC} from 'react'
+import Layout from "@/components/layout/Layout";
 
 const AboutUs: FC = () => {
     return (
-        <div>About us</div>
+        <Layout>About us</Layout>
     )
 }
 
