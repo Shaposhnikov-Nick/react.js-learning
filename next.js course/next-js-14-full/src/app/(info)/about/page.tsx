@@ -1,6 +1,9 @@
+import {FC} from 'react'
 
-export default function About() {
-  return (
-    <div>About</div>
-  );
+const About: FC = () => {
+    return (
+        <div>About</div>
+    );
 }
+
+export default About

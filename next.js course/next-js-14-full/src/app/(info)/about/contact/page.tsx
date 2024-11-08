@@ -1,6 +1,9 @@
+import {FC} from 'react'
 
-export default function Contact() {
-  return (
-    <div>Contact</div>
-  );
+const Contact: FC = () => {
+    return (
+        <div>Contact</div>
+    );
 }
+
+export default Contact
