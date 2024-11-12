@@ -1,7 +1,6 @@
 import {Post} from "../../../types";
 
 export async function getPost(id: number): Promise<Post> {
-    console.log("Id: " + id)
     return fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,
         // {cache: "force-cache"} // static SSG (analog of getStaticProps)
         {cache: "no-store"}   // dynamic SSR (analog of getServerSideProps)
