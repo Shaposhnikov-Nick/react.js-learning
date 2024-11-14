@@ -19,3 +19,9 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+body header div {
+  color: white;
+  background: black;
+  text-align: center;
+}

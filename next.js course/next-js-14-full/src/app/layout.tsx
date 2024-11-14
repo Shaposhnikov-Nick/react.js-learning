@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import React from "react";
+import SimpleHeader from "@/components/SimpleHeader";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -27,9 +28,7 @@ export default function RootLayout({children}: {
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-        <header>
-            Menu
-        </header>
+        <SimpleHeader/>
         {children}
         </body>
         </html>
